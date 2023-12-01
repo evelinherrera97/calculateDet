@@ -1,0 +1,75 @@
+<div class="container-fluid min-vh-100 d-flex justify-content-center align-items-center">
+
+  <div class="card row p-3">
+    <h6 class="text-center mb-4">Seleccionar el tamaño de la matriz</h6>
+    <div class="d-flex justify-content-around mb-5">
+      <button class="btn btn-primary btn-lg col-4" (click)="toggleMatrix('two')">2x2</button>
+      <button class="btn btn-primary btn-lg col-4" (click)="toggleMatrix('three')">3x3</button>
+    </div>
+
+    <div class="row mb-5  justify-content-center align-items-center" [ngSwitch]="toggle">
+        <form *ngSwitchCase="'two'">
+          <div class="row">
+            <div class="col-3">
+              <input type="text" class="form-control" id="11" [formControl]="index11">
+            </div>
+            <div class="col-3">
+  
+              <input type="text" class="form-control" id="12" [formControl]="index12">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-3">
+              <input type="text" class="form-control" id="21" [formControl]="index21">
+  
+            </div>
+            <div class="col-3">
+  
+              <input type="text" class="form-control" id="22" [formControl]="index22">
+            </div>
+          </div>
+  
+        </form>
+        <form *ngSwitchCase="'three'">
+          <div class="row">
+            <div class="col-3">
+              <input type="text" class="form-control" id="11" [formControl]="index11">
+            </div>
+            <div class="col-3">
+              <input type="text" class="form-control" id="12" [formControl]="index12">
+            </div>
+            <div class="col-3">
+              <input type="text" class="form-control" id="12" [formControl]="index13">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-3">
+              <input type="text" class="form-control" id="11" [formControl]="index21">
+            </div>
+            <div class="col-3">
+              <input type="text" class="form-control" id="12" [formControl]="index22">
+            </div>
+            <div class="col-3">
+              <input type="text" class="form-control" id="12" [formControl]="index23">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-3">
+              <input type="text" class="form-control" id="11" [formControl]="index31">
+            </div>
+            <div class="col-3">
+              <input type="text" class="form-control" id="12" [formControl]="index32">
+            </div>
+            <div class="col-3">
+              <input type="text" class="form-control" id="12" [formControl]="index33">
+            </div>
+          </div>
+        </form>
+    </div>
+    
+    <button class="btn btn-primary btn-lg mb-5" (click)="calcule()">Calcular</button>
+    <h3 class="text-center" >Determinante de la matriz: </h3>
+    <h3 class="text-center">{{result}} </h3>
+
+  </div>
+</div>
